@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/textinputborder"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Group name"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Enter the names of the persons you want to allow data transfer to and then click ADD button."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#f00" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/textinputborder"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter mobile number"
+        android:inputType="phone"
+        android:padding="10dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/button"
+        android:onClick="Adduser"
+        android:text="Add User"
+        android:textColor="#fff" />
+
+</LinearLayout>
