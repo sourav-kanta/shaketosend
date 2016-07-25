@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class ServerUniThread extends Thread {
 
 	public static final int PORT=4444;
-	public static ServerSocket server=null;
+	public ServerSocket server=null;
 	Socket ser;
 	Context c;
 	String path;
