@@ -22,7 +22,7 @@ public class RecieveThread extends AsyncTask<Void, Integer, Void>{
 	int time;
 	double speed=0;
 	Date d1,d2;
-	int length;
+	long length;
 	
 	public void setIp(String s,Context c)
 	{
@@ -51,7 +51,7 @@ public class RecieveThread extends AsyncTask<Void, Integer, Void>{
             DataOutputStream dout=new DataOutputStream(outp);
             dout.writeUTF(MainActivity.user);
             String filenm=d.readUTF();
-            length=Integer.parseInt(d.readUTF());
+            length=Long.parseLong(d.readUTF());
             Log.e("Nm", filenm);
             File f = new File(Environment.getExternalStorageDirectory()+"//Shake_And_Send");
             if(!f.exists()) 
@@ -59,12 +59,13 @@ public class RecieveThread extends AsyncTask<Void, Integer, Void>{
     		out = new FileOutputStream(Environment.getExternalStorageDirectory()+"//Shake_And_Send//"+filenm);
     		byte[] bytes = new byte[16*1024];
 
-            int count,total=0;
+            int count;
+            long total=0;
             while ((count = in.read(bytes)) > 0) {
                 out.write(bytes, 0, count);
                 total+=count;
                 
-                MainActivity.prog=total*100/length;                
+                MainActivity.prog=(int) (total*100/length);                
                 publishProgress(MainActivity.prog);                
             }           
             out.close();
